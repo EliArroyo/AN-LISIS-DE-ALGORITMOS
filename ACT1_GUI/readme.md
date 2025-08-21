@@ -2,7 +2,7 @@
 
 Esta aplicación permite **comparar la búsqueda lineal y la búsqueda binaria** en listas de distintos tamaños mediante una **interfaz gráfica en Python**. Muestra resultados numéricos y gráficos de los tiempos de ejecución.
 
----
+
 
 ## Requisitos
 
