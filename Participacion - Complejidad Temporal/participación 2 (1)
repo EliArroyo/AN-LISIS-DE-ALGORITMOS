@@ -1,0 +1,127 @@
+import time
+import matplotlib
+import matplotlib.pyplot as plt 
+from random import sample
+
+matplotlib.rcParams['toolbar'] = 'none'
+
+# ALGORITMOS DE ORDENAMIENTO --------------------
+
+#BUBBLESORT
+
+def bubblesort(vectorbs):
+    n = 0
+    for _ in vectorbs:
+        n += 1
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if vectorbs[j] > vectorbs[j+1]:
+                vectorbs[j], vectorbs[j+1] = vectorbs[j+1], vectorbs[j]
+    return vectorbs
+
+ #MERGESORT
+
+def mergesort(vectormerge):
+    def merge(vectormerge):
+        def largo(vec):
+            largovec = 0
+            for _ in vec:
+                largovec += 1
+            return largovec
+        if largo(vectormerge) > 1:
+            medio = largo(vectormerge)//2
+            izq = vectormerge[:medio]
+            der = vectormerge[medio:]
+            merge(izq)
+            merge(der)
+            i = j = k = 0
+            while i < largo(izq) and j < largo(der):
+                if izq[i] < der[j]:
+                    vectormerge[k] = izq[i]; i += 1
+                else:
+                    vectormerge[k] = der[j]; j += 1
+                k += 1
+            while i < largo(izq):
+                vectormerge[k] = izq[i]; i += 1; k += 1
+            while j < largo(der):
+                vectormerge[k] = der[j]; j += 1; k += 1
+    merge(vectormerge)
+    return vectormerge
+
+#QUICKSORT
+
+def quicksort(vectorquick, start=0, end=None):
+    if end is None:
+        end = len(vectorquick) - 1
+    def quick(vectorquick, start, end):
+        if start >= end: return
+        def particion(vectorquick, start, end):
+            pivot = vectorquick[start]
+            menor, mayor = start + 1, end
+            while True:
+                while menor<= mayor and vectorquick[mayor] >= pivot:
+                    mayor -= 1
+                while menor <= mayor and vectorquick[menor] <= pivot:
+                    menor += 1
+                if menor <= mayor:
+                    vectorquick[menor], vectorquick[mayor] = vectorquick[mayor], vectorquick[menor]
+                else:
+                    break
+            vectorquick[start], vectorquick[mayor] = vectorquick[mayor], vectorquick[start]
+            return mayor
+        p = particion(vectorquick, start, end)
+        quick(vectorquick, start, p-1)
+        quick(vectorquick, p+1, end)
+    quick(vectorquick, start, end)
+    return vectorquick
+
+
+
+# -Lista Generada  -----------------------------
+
+def generar_lista(N):
+    return sample(range(N*10),N)
+
+# -------------------------------------------
+
+def ordenar(lista, algoritmo, n):
+    copia = lista.copy()
+    inicio = time.time()
+    if algoritmo == "bubble":
+        bubblesort(copia)
+    elif algoritmo == "merge":
+        mergesort(copia)
+    elif algoritmo == "quick":
+        quicksort(copia)
+    fin = time.time()
+    duracion = fin - inicio
+    print(f"N:{n:4} | Método:{algoritmo.capitalize():6} | Tiempo:{duracion:.6f} segundos")
+    return duracion
+
+# Grafica -------------------------------------------------
+
+def graficar():
+    tamanios = list(range(50, 1001, 50))
+    resultados_bubble, resultados_merge, resultados_quick = [], [], []
+
+    for n in tamanios:
+        lista = generar_lista(n)
+        resultados_bubble.append(ordenar(lista, "bubble", n))
+        resultados_merge.append(ordenar(lista, "merge", n))
+        resultados_quick.append(ordenar(lista, "quick", n))
+
+    # Graficamos
+    plt.figure(figsize=(8,6))
+    plt.plot(tamanios, resultados_bubble, label="Bubble Sort", marker="o")
+    plt.plot(tamanios, resultados_merge, label="Merge Sort", marker="o")
+    plt.plot(tamanios, resultados_quick, label="Quick Sort", marker="o")
+    plt.xlabel("Tamaño de la lista (N)")
+    plt.ylabel("Tiempo de ejecución (segundos)")
+    plt.title("Comparación de Algoritmos de Ordenamiento")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# -------------------- MAIN --------------------
+if __name__ == "__main__":
+    graficar()
