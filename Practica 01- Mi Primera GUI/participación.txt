@@ -1,0 +1,18 @@
+
+PASO 1 
+
+Que es lbl.pack(pady=10)  Pady es para el espaciado estre los elementos (los pixeles)
+lbl.pack  es una instancia 
+en  root.title ("Mi primera GUI") es el nombre de la ventana por ejemplo yo se lo cambie a root.title("holaaaa")
+root.geometry("360x130") es el tamaño que quieres de la ventana 
+lbl = tk.Label(root, text="¡Hola wejfowjfowfk!") es el msj predeterminado 
+
+
+PASO 2 
+lbl.config(text=f"Hola Compa, {nombre} 👋") esta linea es una concatenación en la que tu insertas tu nombre y al saludar el mensaje de buen dia añade tu nombre 
+y f se necesita para que imprima tu nombre y no "{nombre}"  en la ventana 
+
+btn = tk.Button(root, text="Saludar", command= Saludar)
+btn.pack(pady=8) añadde un boton 
+
+
