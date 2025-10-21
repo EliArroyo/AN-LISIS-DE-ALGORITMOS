@@ -95,5 +95,3 @@ Si quieres mejorar el proyecto, ¡adelante! Cualquier idea es bienvenida.
 Este es un proyecto para aprender sobre algoritmos y esteganografía. Fue hecho para entender cómo funcionan estas técnicas.
 
 ---
-
-⭐ Si te gustó el proyecto, compártelo con tus amigos
