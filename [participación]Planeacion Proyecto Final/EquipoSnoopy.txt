@@ -1,0 +1,41 @@
+Equipo Snoopy
+Jennifer Patricia Valencia Ignacio, Código: 223991721
+Elizabeth Arroyo Moreno, Código: 221453749
+Karla Rebeca Hernández Elizarrarás, Código: 223991977
+ROLES Y RESPONSABILIDADES
+Análisis del algoritmo voraz y diseño de integración
+Responsable: Jenny
+Fecha límite: 13 de noviembre de 2025
+Entregable: Documento de diseño técnico
+Implementación del algoritmo voraz en el código base
+Responsable: Eli
+Fecha límite: 13 de noviembre de 2025
+Entregable: Código funcional del algoritmo
+Diseño de interfaz gráfica (GUI)
+Responsable: Jenny
+Fecha límite: 13 de noviembre de 2025
+Entregable: Mockups y wireframes
+Desarrollo de la GUI con tkinter/PyQt
+Responsable: Rebe
+Fecha límite: 14 de noviembre de 2025
+Entregable: Código de la interfaz
+Integración GUI-Backend
+Responsable: Eli
+Fecha límite: 14 de noviembre de 2025
+Entregable: Sistema integrado
+Pruebas unitarias y de integración
+Responsable: Rebe
+Fecha límite: 14 de noviembre de 2025
+Entregable: Reporte de pruebas
+Benchmarking y análisis de rendimiento
+Responsable: Jenny
+Fecha límite: 14 de noviembre de 2025
+Entregable: Gráficas y análisis comparativo
+Documentación técnica
+Responsable: Eli
+Fecha límite: 14 de noviembre de 2025
+Entregable: Manual técnico
+Elaboración del reporte final
+Responsable: Jenny, Eli y Rebe (todos)
+Fecha límite: 14 de noviembre de 2025
+Entregable: Reporte completo
